@@ -6,25 +6,22 @@
   <title>Cruise Conversations</title>
   <style>
     :root {
-      --dusty-lilac: #A293D3;
-      --warm-peach: #FFD8B1;
-      --peach-cream: #FFF1E6;
-      --golden-ochre: #DDA853;
-      --deep-plum: #4B286D;
-      --soft-navy: #324A5F;
-      --cool-mist: #E2F0EF;
-      --turquoise: #C4F0E0;
+      --ocean-teal: #008C9E;
+      --soft-sand: #FAF3E0;
+      --sea-mist: #D9F3F0;
+      --coral-gold: #E6AA68;
+      --driftwood-gray: #2F3E46;
     }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: var(--warm-peach);
-      color: var(--soft-navy);
+      background: var(--soft-sand);
+      color: var(--driftwood-gray);
     }
 
     header {
-      background: var(--dusty-lilac);
+      background: var(--ocean-teal);
       color: white;
       padding: 2rem;
       text-align: center;
@@ -36,21 +33,21 @@
     }
 
     nav {
-      background: var(--dusty-lilac);
+      background: var(--ocean-teal);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
     }
 
     nav a {
-      color: var(--golden-ochre);
+      color: var(--coral-gold);
       text-decoration: none;
       padding: 1rem;
       font-weight: bold;
     }
 
     nav a:hover {
-      background: var(--cool-mist);
+      background: rgba(255,255,255,0.1);
     }
 
     main {
@@ -60,8 +57,8 @@
     }
 
     .card {
-      background: var(--turquoise);
-      border-left: 6px solid var(--golden-ochre);
+      background: var(--sea-mist);
+      border-left: 6px solid var(--coral-gold);
       border-radius: 12px;
       padding: 2rem;
       margin-bottom: 2rem;
@@ -69,19 +66,19 @@
     }
 
     h2 {
-      color: var(--deep-plum);
+      color: var(--ocean-teal);
       font-size: 1.8rem;
-      border-bottom: 3px solid var(--golden-ochre);
+      border-bottom: 3px solid var(--coral-gold);
       padding-bottom: 0.5rem;
     }
 
     .highlight {
-      color: var(--golden-ochre);
+      color: var(--coral-gold);
       font-weight: bold;
     }
 
     footer {
-      background: var(--dusty-lilac);
+      background: var(--ocean-teal);
       color: white;
       text-align: center;
       padding: 1rem;
@@ -94,6 +91,14 @@
 
     li {
       margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: var(--driftwood-gray);
+    }
+
+    a:hover {
+      color: var(--coral-gold);
     }
 
     @media (max-width: 600px) {
@@ -114,6 +119,7 @@
     <a href="#ambient">Ambient Videos</a>
     <a href="#port">Behind the Port</a>
     <a href="#trivia">Trivia at Sea</a>
+    <a href="#downloads">Downloads</a>
   </nav>
 
   <main>
@@ -157,6 +163,17 @@
         <li>“Guess the Ship by the Funnel”</li>
         <li>“How Many Meals Does a Cruise Serve Daily?”</li>
         <li>“What’s the Saltiest Sea in the World?”</li>
+      </ul>
+    </section>
+
+    <section id="downloads" class="card">
+      <h2>📁 Downloadable Resources</h2>
+      <p>Explore and download bonus content and templates from each Cruise Conversations series.</p>
+      <ul>
+        <li><strong>Bedtime Stories:</strong> <a href="downloads/bedtime_stories_script_pack.pdf" download>Script Pack (PDF)</a></li>
+        <li><strong>Ambient Videos:</strong> <a href="downloads/ambient_soundtrack_list.pdf" download>Soundtrack List (PDF)</a></li>
+        <li><strong>Behind the Port:</strong> <a href="downloads/port_notes.pdf" download>Port Research Notes (PDF)</a></li>
+        <li><strong>Trivia at Sea:</strong> <a href="downloads/cruise_trivia_cards.pdf" download>Printable Trivia Cards (PDF)</a></li>
       </ul>
     </section>
   </main>
