@@ -5,59 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cruise Conversations</title>
   <style>
+    :root {
+      --dusty-lilac: #A293D3;
+      --peach-cream: #FFF1E6;
+      --golden-ochre: #DDA853;
+      --deep-plum: #4B286D;
+      --soft-navy: #324A5F;
+      --cool-mist: #E2F0EF;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #00FFDE;
-      color: #003246;
+      background: var(--peach-cream);
+      color: var(--soft-navy);
     }
+
     header {
-      background: #00FFFF; /* Aqua header */
+      background: var(--dusty-lilac);
       color: white;
       padding: 2rem;
       text-align: center;
     }
+
     h1 {
       margin: 0;
       font-size: 2.5rem;
     }
+
     nav {
-      background: #00FFFF;
+      background: var(--dusty-lilac);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
     }
+
     nav a {
-      color: #DDA853;
+      color: var(--golden-ochre);
       text-decoration: none;
       padding: 1rem;
       font-weight: bold;
     }
+
     nav a:hover {
-      background: rgba(255,255,255,0.1);
+      background: var(--cool-mist);
     }
+
     section {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
-      border-bottom: 3px solid #DDA853;
+      border-bottom: 2px solid var(--cool-mist);
     }
+
     h2 {
-      color: #0065F8;
+      color: var(--deep-plum);
       font-size: 1.8rem;
-      border-bottom: 3px solid #DDA853;
+      border-bottom: 3px solid var(--golden-ochre);
       padding-bottom: 0.5rem;
     }
+
     .highlight {
-      color: #DDA853;
+      color: var(--golden-ochre);
+      font-weight: bold;
     }
+
     footer {
-      background: #00FFFF;
+      background: var(--dusty-lilac);
       color: white;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
     }
+
     @media (max-width: 600px) {
       h1 { font-size: 2rem; }
       nav a { padding: 0.7rem; font-size: 0.9rem; }
