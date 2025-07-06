@@ -2,45 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cruise Conversations</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
     :root {
-      --ocean-teal: #008C9E;
-      --soft-sand: #FAF3E0;
-      --sea-mist: #D9F3F0;
-      --coral-gold: #E6AA68;
-      --driftwood-gray: #2F3E46;
+      --teal: #008C9E;
+      --sand: #FAF3E0;
+      --seafoam: #D9F3F0;
+      --coral: #E6AA68;
+      --deep: #2F3E46;
+      --peach: #FFD6B0;
     }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: var(--soft-sand);
-      color: var(--driftwood-gray);
+      background: linear-gradient(to bottom, #D9F3F0, #FAF3E0);
+      color: var(--deep);
     }
 
     header {
-      background: var(--ocean-teal);
+      background-color: var(--teal);
       color: white;
       padding: 2rem;
       text-align: center;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
     nav {
-      background: var(--ocean-teal);
+      background: var(--teal);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
     }
 
     nav a {
-      color: var(--coral-gold);
+      color: var(--coral);
       text-decoration: none;
       padding: 1rem;
       font-weight: bold;
@@ -57,8 +54,8 @@
     }
 
     .card {
-      background: var(--sea-mist);
-      border-left: 6px solid var(--coral-gold);
+      background: var(--seafoam);
+      border-left: 6px solid var(--coral);
       border-radius: 12px;
       padding: 2rem;
       margin-bottom: 2rem;
@@ -66,19 +63,19 @@
     }
 
     h2 {
-      color: var(--ocean-teal);
+      color: var(--teal);
       font-size: 1.8rem;
-      border-bottom: 3px solid var(--coral-gold);
+      border-bottom: 3px solid var(--coral);
       padding-bottom: 0.5rem;
     }
 
     .highlight {
-      color: var(--coral-gold);
+      color: var(--coral);
       font-weight: bold;
     }
 
     footer {
-      background: var(--ocean-teal);
+      background: var(--teal);
       color: white;
       text-align: center;
       padding: 1rem;
@@ -94,17 +91,11 @@
     }
 
     a {
-      color: var(--driftwood-gray);
+      color: var(--deep);
     }
 
     a:hover {
-      color: var(--coral-gold);
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      nav a { padding: 0.7rem; font-size: 0.9rem; }
-      .card { padding: 1.5rem; }
+      color: var(--coral);
     }
   </style>
 </head>
@@ -115,66 +106,42 @@
   </header>
 
   <nav>
-    <a href="#stories">Bedtime Stories</a>
-    <a href="#ambient">Ambient Videos</a>
-    <a href="#port">Behind the Port</a>
-    <a href="#trivia">Trivia at Sea</a>
-    <a href="#downloads">Downloads</a>
+    <a href="#stories">🌙 Bedtime Stories</a>
+    <a href="#ambient">🌊 Ambient Videos</a>
+    <a href="#port">📍 Behind the Port</a>
+    <a href="#trivia">🧭 Trivia at Sea</a>
+    <a href="#downloads">📁 Downloads</a>
     <a href="game/index.html">🎮 Play Game</a>
   </nav>
 
   <main>
     <section id="stories" class="card">
       <h2>🌙 Bedtime Stories at Sea</h2>
-      <p>Classic tales retold in soothing narration, paired with calming ocean footage. Sail into stories like <span class="highlight">The Secret Garden</span>, <span class="highlight">Tristan and Isolde</span>, and <span class="highlight">The Little Mermaid</span>.</p>
-      <ul>
-        <li><strong>The Secret Garden:</strong> A 12-part series of transformation and healing.</li>
-        <li><strong>Tristan and Isolde:</strong> Romance and legend on the high seas.</li>
-        <li><strong>The Little Mermaid:</strong> A two-part poetic retelling with wave-lit visuals.</li>
-      </ul>
+      <p>Classic tales retold in soothing narration, paired with calming ocean footage.</p>
     </section>
 
     <section id="ambient" class="card">
       <h2>🌊 Ambient Cruise Videos</h2>
-      <p>Footage from real voyages—coastlines, sea breezes, and quiet decks—set to ambient soundscapes like ocean waves, distant seagulls, and light summer music.</p>
-      <ul>
-        <li>Coastal Sunrise Series</li>
-        <li>Evening Deck Lights</li>
-        <li>Rainy Sea Day Reflections</li>
-        <li>Island Summer Soundtracks</li>
-      </ul>
+      <p>Scenic footage from real voyages with ambient soundscapes for relaxation.</p>
     </section>
 
     <section id="port" class="card">
       <h2>📍 Behind the Port</h2>
-      <p>Explore the local stories, legends, and discoveries hiding just beyond the dock. Perfect for culture lovers and armchair travelers.</p>
-      <ul>
-        <li>“Naples: Ghosts Beneath the Streets”</li>
-        <li>“Sydney: From Shoreline to Skyline”</li>
-        <li>“Split, Croatia: Palaces and Pirates”</li>
-        <li>“Port Stories: What You Don’t See on the Shore”</li>
-      </ul>
+      <p>Explore the local stories and hidden gems just beyond the cruise terminal.</p>
     </section>
 
     <section id="trivia" class="card">
       <h2>🧭 Trivia at Sea</h2>
-      <p>Short-form video quizzes exploring cruise ships, ocean myths, history, and geography. Relax, guess along, and learn something new every week.</p>
-      <ul>
-        <li>“Where’s the Southernmost Cruise Port?”</li>
-        <li>“Guess the Ship by the Funnel”</li>
-        <li>“How Many Meals Does a Cruise Serve Daily?”</li>
-        <li>“What’s the Saltiest Sea in the World?”</li>
-      </ul>
+      <p>Test your cruise knowledge with fun, educational quizzes every week.</p>
     </section>
 
     <section id="downloads" class="card">
       <h2>📁 Downloadable Resources</h2>
-      <p>Explore and download bonus content and templates from each Cruise Conversations series.</p>
       <ul>
-        <li><strong>Bedtime Stories:</strong> <a href="downloads/bedtime_stories_script_pack.pdf" download>Script Pack (PDF)</a></li>
-        <li><strong>Ambient Videos:</strong> <a href="downloads/ambient_soundtrack_list.pdf" download>Soundtrack List (PDF)</a></li>
-        <li><strong>Behind the Port:</strong> <a href="downloads/port_notes.pdf" download>Port Research Notes (PDF)</a></li>
-        <li><strong>Trivia at Sea:</strong> <a href="downloads/cruise_trivia_cards.pdf" download>Printable Trivia Cards (PDF)</a></li>
+        <li><strong>🌙 Relaxing Bedtime Kit:</strong> <a href="downloads/relaxing_bedtime_kit.pdf" download>Download the calming story companion</a></li>
+        <li><strong>🌊 Ambient Cruise Sampler:</strong> <a href="downloads/ambient_cruise_sampler.pdf" download>Download ambient video guide</a></li>
+        <li><strong>📍 Port Explorer Cards:</strong> <a href="downloads/port_explorer_cards.pdf" download>Download port fact cards</a></li>
+        <li><strong>🧭 Cruise Trivia Game Pack:</strong> <a href="downloads/cruise_trivia_game.pdf" download>Download printable trivia kit</a></li>
       </ul>
     </section>
   </main>
