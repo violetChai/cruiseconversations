@@ -7,17 +7,19 @@
   <style>
     :root {
       --dusty-lilac: #A293D3;
+      --warm-peach: #FFD8B1;
       --peach-cream: #FFF1E6;
       --golden-ochre: #DDA853;
       --deep-plum: #4B286D;
       --soft-navy: #324A5F;
       --cool-mist: #E2F0EF;
+      --turquoise: #C4F0E0;
     }
 
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: var(--peach-cream);
+      background: var(--warm-peach);
       color: var(--soft-navy);
     }
 
@@ -51,11 +53,19 @@
       background: var(--cool-mist);
     }
 
-    section {
-      padding: 2rem;
-      max-width: 900px;
+    main {
+      padding: 2rem 1rem;
+      max-width: 1000px;
       margin: auto;
-      border-bottom: 2px solid var(--cool-mist);
+    }
+
+    .card {
+      background: var(--turquoise);
+      border-left: 6px solid var(--golden-ochre);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
 
     h2 {
@@ -78,9 +88,18 @@
       font-size: 0.9rem;
     }
 
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
     @media (max-width: 600px) {
       h1 { font-size: 2rem; }
       nav a { padding: 0.7rem; font-size: 0.9rem; }
+      .card { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -98,7 +117,7 @@
   </nav>
 
   <main>
-    <section id="stories">
+    <section id="stories" class="card">
       <h2>🌙 Bedtime Stories at Sea</h2>
       <p>Classic tales retold in soothing narration, paired with calming ocean footage. Sail into stories like <span class="highlight">The Secret Garden</span>, <span class="highlight">Tristan and Isolde</span>, and <span class="highlight">The Little Mermaid</span>.</p>
       <ul>
@@ -108,7 +127,7 @@
       </ul>
     </section>
 
-    <section id="ambient">
+    <section id="ambient" class="card">
       <h2>🌊 Ambient Cruise Videos</h2>
       <p>Footage from real voyages—coastlines, sea breezes, and quiet decks—set to ambient soundscapes like ocean waves, distant seagulls, and light summer music.</p>
       <ul>
@@ -119,7 +138,7 @@
       </ul>
     </section>
 
-    <section id="port">
+    <section id="port" class="card">
       <h2>📍 Behind the Port</h2>
       <p>Explore the local stories, legends, and discoveries hiding just beyond the dock. Perfect for culture lovers and armchair travelers.</p>
       <ul>
@@ -130,7 +149,7 @@
       </ul>
     </section>
 
-    <section id="trivia">
+    <section id="trivia" class="card">
       <h2>🧭 Trivia at Sea</h2>
       <p>Short-form video quizzes exploring cruise ships, ocean myths, history, and geography. Relax, guess along, and learn something new every week.</p>
       <ul>
