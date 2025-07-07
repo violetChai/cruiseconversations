@@ -93,7 +93,7 @@
   </div>
 
   <script>
-    const questions = [
+    const allQuestions = [
       {
         q: "What is the name of the area on a cruise ship where the captain controls the vessel?",
         choices: ["The Deck", "The Bridge", "The Bow", "The Engine Room"],
@@ -118,13 +118,48 @@
         q: "What is a popular type of cruise that sails around a group of islands?",
         choices: ["Island Hopper", "Shore Break", "Ocean Dash", "Port Sprint"],
         correct: 0
+      },
+      {
+        q: "Which ocean is the largest by surface area?",
+        choices: ["Atlantic", "Indian", "Arctic", "Pacific"],
+        correct: 3
+      },
+      {
+        q: "What is the term for a stop at a port during a cruise?",
+        choices: ["Layover", "Docking", "Shore Excursion", "Anchoring"],
+        correct: 2
+      },
+      {
+        q: "Which cruise line is known for its 'Fun Ships'?",
+        choices: ["Royal Caribbean", "Carnival", "Norwegian", "MSC"],
+        correct: 1
+      },
+      {
+        q: "Which area of the ship usually contains pools and sun decks?",
+        choices: ["Promenade Deck", "Aft", "Lido Deck", "Bridge"],
+        correct: 2
+      },
+      {
+        q: "What is the nautical term for the left side of a ship?",
+        choices: ["Starboard", "Port", "Bow", "Stern"],
+        correct: 1
       }
     ];
 
     let current = 0;
     let score = 0;
+    let questions = [];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
 
     function startGame() {
+      shuffle(allQuestions);
+      questions = allQuestions.slice(0, 5);
       current = 0;
       score = 0;
       document.getElementById("intro").style.display = "none";
