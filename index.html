@@ -3,249 +3,172 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trivia at Sea</title>
-  <link rel="icon" href="game_favicon.ico" type="image/x-icon" />
+  <title>Cruise Conversations</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
+    :root {
+      --teal: #008C9E;
+      --sand: #FAF3E0;
+      --seafoam: #D9F3F0;
+      --coral: #E6AA68;
+      --deep: #2F3E46;
+      --peach: #FFD6B0;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #D9F3F0, #FAF3E0);
       margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #D9F3F0, #FAF3E0);
+      color: var(--deep);
     }
-    #game {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-      padding: 2rem;
-      max-width: 600px;
-      width: 90%;
-      text-align: center;
-      position: relative;
-    }
-    h1 {
-      color: #008C9E;
-    }
-    .btn {
-      display: block;
-      margin: 1rem auto;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      background: #008C9E;
+
+    header {
+      background-color: var(--teal);
       color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+      padding: 2rem;
+      text-align: center;
     }
-    .btn:hover {
-      background: #006f7a;
+
+    nav {
+      background: var(--teal);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-    .choice {
-      display: block;
-      margin: 0.5rem auto;
-      padding: 0.8rem;
-      background: #D9F3F0;
-      color: #003f4f;
-      border: 2px solid #008C9E;
-      border-radius: 8px;
-      cursor: pointer;
-      width: 80%;
+
+    nav a {
+      color: var(--coral);
+      text-decoration: none;
+      padding: 1rem;
+      font-weight: bold;
     }
-    .correct {
-      background: #d4edda;
+
+    nav a:hover {
+      background: rgba(255,255,255,0.1);
     }
-    .incorrect {
-      background: #f8d7da;
+
+    main {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
     }
-    #questionCounter {
-      font-size: 1rem;
-      color: #555;
+
+    .card {
+      background: var(--seafoam);
+      border-left: 6px solid var(--coral);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: var(--teal);
+      font-size: 1.8rem;
+      border-bottom: 3px solid var(--coral);
+      padding-bottom: 0.5rem;
+    }
+
+    .highlight {
+      color: var(--coral);
+      font-weight: bold;
+    }
+
+    footer {
+      background: var(--teal);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
       margin-bottom: 0.5rem;
     }
-    .port-animation {
-      position: absolute;
-      top: -30px;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(90deg, #008C9E 50%, transparent 50%) repeat-x;
-      background-size: 40px 100%;
-      animation: sail 3s linear infinite;
+
+    a {
+      color: var(--deep);
     }
-    @keyframes sail {
-      from { background-position: 0 0; }
-      to { background-position: 40px 0; }
+
+    a:hover {
+      color: var(--coral);
     }
+
     .icons {
       display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 1rem;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 2rem;
     }
+
     .icons img {
-      width: 40px;
+      width: 80px;
       height: auto;
+      margin: 1rem;
     }
   </style>
 </head>
 <body>
-  <div id="game">
-    <div class="port-animation"></div>
-    <div class="icons">
+  <header>
+    <h1>Cruise Conversations</h1>
+    <p>Relaxing storytelling, trivia, and travel memories—brought to life at sea.</p>
+  </header>
+
+  <nav>
+    <a href="#stories">🌙 Bedtime Stories</a>
+    <a href="#ambient">🌊 Ambient Videos</a>
+    <a href="#port">📍 Behind the Port</a>
+    <a href="#trivia">🧭 Trivia at Sea</a>
+    <a href="#downloads">📁 Downloads</a>
+    <a href="game/index.html">🎮 Play Game</a>
+  </nav>
+
+  <main>
+    <section class="icons">
+      <img src="images/cruise_ship.png" alt="Cruise Ship" />
       <img src="images/anchor.png" alt="Anchor" />
-      <img src="images/ship.png" alt="Ship" />
-      <img src="images/palm.png" alt="Palm Tree" />
-      <img src="images/wheel.png" alt="Ship Wheel" />
+      <img src="images/palm_tree.png" alt="Palm Tree" />
+      <img src="images/ship_wheel.png" alt="Ship Wheel" />
       <img src="images/lifesaver.png" alt="Life Saver" />
-    </div>
-    <div id="intro">
-      <h1>🧭 Trivia at Sea</h1>
-      <p>Welcome aboard! You’ll be answering 5 questions about cruises, ports, and the ocean. Tap the correct option and learn something new each round!</p>
-      <button class="btn" onclick="startGame()">Start Game</button>
-    </div>
+    </section>
 
-    <div id="question" style="display:none">
-      <div id="questionCounter"></div>
-      <h2 id="questionText"></h2>
-      <div id="choices"></div>
-    </div>
+    <section id="stories" class="card">
+      <h2>🌙 Bedtime Stories at Sea</h2>
+      <p>Classic tales retold in soothing narration, paired with calming ocean footage.</p>
+    </section>
 
-    <div id="feedback" style="display:none">
-      <h3 id="feedbackText"></h3>
-      <button class="btn" onclick="nextQuestion()">Next</button>
-    </div>
+    <section id="ambient" class="card">
+      <h2>🌊 Ambient Cruise Videos</h2>
+      <p>Scenic footage from real voyages with ambient soundscapes for relaxation.</p>
+    </section>
 
-    <div id="end" style="display:none">
-      <h2>🎉 You finished!</h2>
-      <p id="scoreText"></p>
-      <button class="btn" onclick="startGame()">Play Again</button>
-    </div>
-  </div>
+    <section id="port" class="card">
+      <h2>📍 Behind the Port</h2>
+      <p>Explore the local stories and hidden gems just beyond the cruise terminal.</p>
+    </section>
 
-  <script>
-    const allQuestions = [
-      {
-        q: "What is the name of the area on a cruise ship where the captain controls the vessel?",
-        choices: ["The Deck", "The Bridge", "The Bow", "The Engine Room"],
-        correct: 1
-      },
-      {
-        q: "Which country is home to the port of Split?",
-        choices: ["Italy", "Greece", "Croatia", "France"],
-        correct: 2
-      },
-      {
-        q: "What color is traditionally used for lifeboats on cruise ships?",
-        choices: ["Blue", "White", "Orange", "Yellow"],
-        correct: 2
-      },
-      {
-        q: "What does a ship’s anchor do?",
-        choices: ["Speeds up the ship", "Keeps it in place", "Launches lifeboats", "Controls steering"],
-        correct: 1
-      },
-      {
-        q: "What is a popular type of cruise that sails around a group of islands?",
-        choices: ["Island Hopper", "Shore Break", "Ocean Dash", "Port Sprint"],
-        correct: 0
-      },
-      {
-        q: "Which ocean is the largest by surface area?",
-        choices: ["Atlantic", "Indian", "Arctic", "Pacific"],
-        correct: 3
-      },
-      {
-        q: "What is the term for a stop at a port during a cruise?",
-        choices: ["Layover", "Docking", "Shore Excursion", "Anchoring"],
-        correct: 2
-      },
-      {
-        q: "Which cruise line is known for its 'Fun Ships'?",
-        choices: ["Royal Caribbean", "Carnival", "Norwegian", "MSC"],
-        correct: 1
-      },
-      {
-        q: "Which area of the ship usually contains pools and sun decks?",
-        choices: ["Promenade Deck", "Aft", "Lido Deck", "Bridge"],
-        correct: 2
-      },
-      {
-        q: "What is the nautical term for the left side of a ship?",
-        choices: ["Starboard", "Port", "Bow", "Stern"],
-        correct: 1
-      }
-    ];
+    <section id="trivia" class="card">
+      <h2>🧭 Trivia at Sea</h2>
+      <p>Test your cruise knowledge with fun, educational quizzes every week.</p>
+    </section>
 
-    let current = 0;
-    let score = 0;
-    let questions = [];
+    <section id="downloads" class="card">
+      <h2>📁 Downloadable Resources</h2>
+      <ul>
+        <li><strong>🌙 Relaxing Bedtime Kit:</strong> <a href="downloads/relaxing_bedtime_kit.pdf" download>Download the calming story companion</a></li>
+        <li><strong>🌊 Ambient Cruise Sampler:</strong> <a href="downloads/ambient_cruise_sampler.pdf" download>Download ambient video guide</a></li>
+        <li><strong>📍 Port Explorer Cards:</strong> <a href="downloads/port_explorer_cards.pdf" download>Download port fact cards</a></li>
+        <li><strong>🧭 Cruise Trivia Game Pack:</strong> <a href="downloads/cruise_trivia_game.pdf" download>Download printable trivia kit</a></li>
+      </ul>
+    </section>
+  </main>
 
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-    }
-
-    function startGame() {
-      shuffle(allQuestions);
-      questions = allQuestions.slice(0, 5);
-      current = 0;
-      score = 0;
-      document.getElementById("intro").style.display = "none";
-      document.getElementById("end").style.display = "none";
-      showQuestion();
-    }
-
-    function showQuestion() {
-      const q = questions[current];
-      document.getElementById("question").style.display = "block";
-      document.getElementById("feedback").style.display = "none";
-      document.getElementById("questionText").innerText = q.q;
-      document.getElementById("questionCounter").innerText = `Question ${current + 1} of ${questions.length}`;
-
-      const choicesDiv = document.getElementById("choices");
-      choicesDiv.innerHTML = "";
-
-      q.choices.forEach((choice, idx) => {
-        const btn = document.createElement("button");
-        btn.innerText = choice;
-        btn.className = "choice";
-        btn.onclick = () => handleAnswer(idx);
-        choicesDiv.appendChild(btn);
-      });
-    }
-
-    function handleAnswer(selected) {
-      const q = questions[current];
-      document.getElementById("question").style.display = "none";
-      document.getElementById("feedback").style.display = "block";
-
-      if (selected === q.correct) {
-        score++;
-        document.getElementById("feedbackText").innerText = "✅ Correct!";
-      } else {
-        document.getElementById("feedbackText").innerText = `❌ Oops! The correct answer was: ${q.choices[q.correct]}`;
-      }
-    }
-
-    function nextQuestion() {
-      current++;
-      if (current < questions.length) {
-        showQuestion();
-      } else {
-        endGame();
-      }
-    }
-
-    function endGame() {
-      document.getElementById("feedback").style.display = "none";
-      document.getElementById("end").style.display = "block";
-      document.getElementById("scoreText").innerText = `You scored ${score} out of ${questions.length}.`;
-    }
-  </script>
+  <footer>
+    <p>&copy; 2025 Cruise Conversations | Created by violetChai | Calm seas, curious minds.</p>
+  </footer>
 </body>
 </html>
