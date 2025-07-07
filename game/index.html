@@ -2,21 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Port Quiz Adventure</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trivia at Sea</title>
+  <link rel="icon" href="game_favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #D9F3F0, #FAF3E0);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    #game {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      padding: 2rem;
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+    }
+    h1 {
+      color: #008C9E;
+    }
+    .btn {
+      display: block;
+      margin: 1rem auto;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      background: #008C9E;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #006f7a;
+    }
+    .choice {
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      background: #f0f8f8;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .correct {
+      background: #d4edda;
+    }
+    .incorrect {
+      background: #f8d7da;
+    }
+  </style>
 </head>
 <body>
-  <div class="game-container">
-    <h1>🛳️ Port Quiz Adventure</h1>
-    <div id="questionBox">
-      <h2 id="question"></h2>
-      <div id="answers"></div>
+  <div id="game">
+    <div id="intro">
+      <h1>🧭 Trivia at Sea</h1>
+      <p>Welcome aboard! Test your knowledge about cruises, ports, and the ocean.</p>
+      <button class="btn" onclick="startGame()">Start</button>
     </div>
-    <div id="result"></div>
-    <div id="progress">Visited Ports: <span id="score">0</span> / 5</div>
+
+    <div id="question" style="display:none">
+      <h2 id="questionText"></h2>
+      <div id="choices"></div>
+    </div>
+
+    <div id="feedback" style="display:none">
+      <h3 id="feedbackText"></h3>
+      <button class="btn" onclick="nextQuestion()">Next</button>
+    </div>
+
+    <div id="end" style="display:none">
+      <h2>🎉 You finished!</h2>
+      <p id="scoreText"></p>
+      <button class="btn" onclick="startGame()">Play Again</button>
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const questions = [
+      {
+        q: "What is the name of the area on a cruise ship where the captain controls the vessel?",
+        choices: ["The Deck", "The Bridge", "The Bow", "The Engine Room"],
+        correct: 1
+      },
+      {
+        q: "Which country is home to the port of Split?",
+        choices: ["Italy", "Greece", "Croatia", "France"],
+        correct: 2
+      },
+      {
+        q: "What color is traditionally used for lifeboats on cruise ships?",
+        choices: ["Blue", "White", "Orange", "Yellow"],
+        correct: 2
+      },
+      {
+        q: "What does a ship’s anchor do?",
+        choices: ["Speeds up the ship", "Keeps it in place", "Launches lifeboats", "Controls steering"],
+        correct: 1
+      },
+      {
+        q: "What is a popular type of cruise that sails around a group of islands?",
+        choices: ["Island Hopper", "Shore Break", "Ocean Dash", "Port Sprint"],
+        correct: 0
+      }
+    ];
+
+    let current = 0;
+    let score = 0;
+
+    function startGame() {
+      current = 0;
+      score = 0;
+      document.getElementById("intro").style.display = "none";
+      document.getElementById("end").style.display = "none";
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const q = questions[current];
+      document.getElementById("question").style.display = "block";
+      document.getElementById("feedback").style.display = "none";
+      document.getElementById("questionText").innerText = q.q;
+
+      const choicesDiv = document.getElementById("choices");
+      choicesDiv.innerHTML = "";
+
+      q.choices.forEach((choice, idx) => {
+        const btn = document.createElement("button");
+        btn.innerText = choice;
+        btn.className = "choice";
+        btn.onclick = () => handleAnswer(idx);
+        choicesDiv.appendChild(btn);
+      });
+    }
+
+    function handleAnswer(selected) {
+      const q = questions[current];
+      document.getElementById("question").style.display = "none";
+      document.getElementById("feedback").style.display = "block";
+
+      if (selected === q.correct) {
+        score++;
+        document.getElementById("feedbackText").innerText = "✅ Correct!";
+      } else {
+        document.getElementById("feedbackText").innerText = `❌ Oops! The correct answer was: ${q.choices[q.correct]}`;
+      }
+    }
+
+    function nextQuestion() {
+      current++;
+      if (current < questions.length) {
+        showQuestion();
+      } else {
+        endGame();
+      }
+    }
+
+    function endGame() {
+      document.getElementById("feedback").style.display = "none";
+      document.getElementById("end").style.display = "block";
+      document.getElementById("scoreText").innerText = `You scored ${score} out of ${questions.length}.`;
+    }
+  </script>
 </body>
 </html>
+
